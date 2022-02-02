@@ -3,5 +3,11 @@ Rails.application.routes.draw do
     registrations: 'auth/registrations'
   }
 
+  resources :messages, only: ['index'] do
+    member do
+      resources :likes, only: ['create']
+    end
+  end
+  
   resources :messages, only: ['index']
 end
