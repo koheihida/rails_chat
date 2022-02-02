@@ -5,8 +5,6 @@
     <input type="password" required placeholder="パスワード" v-model="password">
     <button>ログインする</button>
   </form>
-
-  Eメール：{{ email }}
 </template>
 
 <script>
