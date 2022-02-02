@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :likes, only: ['create']
     end
   end
-  
+
   resources :messages, only: ['index']
+
+  resources :likes, only:['destroy']
 end
