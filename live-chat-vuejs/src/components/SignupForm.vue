@@ -5,6 +5,7 @@
     <input type="email" required placeholder="メールアドレス" v-model="email">
     <input type="password" required placeholder="パスワード" v-model="password">
     <input type="password" required placeholder="パスワード（確認用）" v-model="passwordConfirmation">
+    <div class="error">{{ error }}</div>
     <button>登録する</button>
   </form>
 </template>
