@@ -19,11 +19,13 @@ export default {
       name: '',
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      error:null
     }
   },
   methods:{
     async signUp(){
+      this.error = null
       try {
         const res = await axios.post('http://localhost:3000/auth',{
           name:this.name,
@@ -32,10 +34,13 @@ export default {
           password_confirmation:this.passwordConfirmation
         }
       )
+      if(!res){
+        throw new Error('アカウントを登録できませんでした')
+      }
       console.log({ res })
       return res
       }catch(error){
-        console.log({ error })
+        this.error = 'アカウントを登録できませんでした'
       }
     }
   }
