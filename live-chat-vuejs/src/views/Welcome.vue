@@ -24,7 +24,7 @@ export default {
   },
   methods:{
     redirectToChatRoom(){
-      this.$router.puth({name:'Chatroom'})
+      this.$router.push({name:'Chatroom'})
     }
   }
 }
